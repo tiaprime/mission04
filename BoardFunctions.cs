@@ -9,34 +9,34 @@ namespace mission04
     internal class BoardFunctions
     {
         // Function to print a board
-        public void PrintBoard(char[][] boardArray)
+        public void PrintBoard(string[,] boardArray)
         {
             // Loop through the board and print each element
-            for (int i = 0; i < boardArray.Count(); i++)
+            for (int i = 0; i < boardArray.GetLength(0); i++)
             {
-                for (int j = 0; j < boardArray[i].Count(); j++)
+                for (int j = 0; j < boardArray.GetLength(1); j++)
                 {
-                    Console.Write(boardArray[i][j] + " ");
+                    Console.Write(boardArray[i,j] + " ");
                 }
                 Console.WriteLine();
             }
         }
 
-        public (bool, char) CheckWinner(char[][] boardArray)
+        public (bool, string) CheckWinner(string[,] boardArray)
         {
             bool winner = false;
-            char winValue = ' ';
+            string winValue = "";
 
             //If statements to only check for a winner if a winner hasn't been found yet
             // vvvv
             //Check Horizonatal win
             if (winner != true)
             {
-                for (int i = 0; i < boardArray.Count(); i++)
+                for (int i = 0; i < boardArray.GetLength(0); i++)
                 {
-                    winValue = boardArray[i][0];
+                    winValue = boardArray[i,0];
 
-                    if (boardArray[i][1] == winValue && boardArray[i][1] == winValue)
+                    if (boardArray[i,1] == winValue && boardArray[i,1] == winValue)
                     {
                         winner = true;
                     }
@@ -46,11 +46,11 @@ namespace mission04
             //Check Vertical win
             if (winner != true)
             {
-                for (int i = 0; i < boardArray.Count(); i++)
+                for (int i = 0; i < boardArray.GetLength(0); i++)
                 {
-                    winValue = boardArray[0][i];
+                    winValue = boardArray[0,i];
 
-                    if (boardArray[1][i] == winValue && boardArray[2][i] == winValue)
+                    if (boardArray[1,i] == winValue && boardArray[2,i] == winValue)
                     {
                         winner = true;
                     }
@@ -60,9 +60,9 @@ namespace mission04
             //Check left Diagonal win
             if (winner != true)
             {
-                winValue = boardArray[0][0];
+                winValue = boardArray[0,0];
 
-                if (boardArray[1][1] == winValue && boardArray[2][2] == winValue)
+                if (boardArray[1,1] == winValue && boardArray[2,2] == winValue)
                 {
                     winner = true;
                 }
@@ -71,9 +71,9 @@ namespace mission04
             //Check right Diagonal win
             if (winner != true)
             {
-                winValue = boardArray[0][2];
+                winValue = boardArray[0,2];
 
-                if (boardArray[1][1] == winValue && boardArray[2][0] == winValue)
+                if (boardArray[1,1] == winValue && boardArray[2,0] == winValue)
                 {
                     winner = true;
                 }
