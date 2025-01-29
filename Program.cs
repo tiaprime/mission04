@@ -24,6 +24,7 @@ Console.WriteLine("Player 1 goes first");
 Console.WriteLine();
 
 //THE GAME PLAY LOOP
+//this is a test
 
 do { 
 
