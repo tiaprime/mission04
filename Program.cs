@@ -81,7 +81,7 @@ for (int i = 0; i < rows; i++)
     {
         if (boardArray[i, j] == user1_input)
         {
-            boardArray[i, j] = playerSym; //**** UPDATE TO USER SYMBOL
+            boardArray[i, j] = playerSym; 
             validGuess.Remove(user1_input); // removed used number
 
         }
