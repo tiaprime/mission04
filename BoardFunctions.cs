@@ -25,6 +25,7 @@ namespace mission04
         public (bool, string) CheckWinner(string[,] boardArray)
         {
             bool winner = false;
+            string checkValue = "";
             string winValue = "";
 
             //If statements to only check for a winner if a winner hasn't been found yet
@@ -34,11 +35,12 @@ namespace mission04
             {
                 for (int i = 0; i < boardArray.GetLength(0); i++)
                 {
-                    winValue = boardArray[i,0];
+                    checkValue = boardArray[i,0];
 
-                    if (boardArray[i,1] == winValue && boardArray[i,1] == winValue)
+                    if (boardArray[i,1] == checkValue && boardArray[i,2] == checkValue)
                     {
                         winner = true;
+                        winValue = checkValue;
                     }
                 }
             }
@@ -48,11 +50,12 @@ namespace mission04
             {
                 for (int i = 0; i < boardArray.GetLength(0); i++)
                 {
-                    winValue = boardArray[0,i];
+                    checkValue = boardArray[0, i];
 
-                    if (boardArray[1,i] == winValue && boardArray[2,i] == winValue)
+                    if (boardArray[1,i] == checkValue && boardArray[2,i] == checkValue)
                     {
                         winner = true;
+                        winValue = checkValue;
                     }
                 }
             }
@@ -62,7 +65,7 @@ namespace mission04
             {
                 winValue = boardArray[0,0];
 
-                if (boardArray[1,1] == winValue && boardArray[2,2] == winValue)
+                if (boardArray[1,1] == checkValue && boardArray[2,2] == checkValue)
                 {
                     winner = true;
                 }
@@ -73,7 +76,7 @@ namespace mission04
             {
                 winValue = boardArray[0,2];
 
-                if (boardArray[1,1] == winValue && boardArray[2,0] == winValue)
+                if (boardArray[1,1] == checkValue && boardArray[2,0] == checkValue)
                 {
                     winner = true;
                 }
