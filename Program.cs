@@ -2,6 +2,11 @@
 
 
 using System.Diagnostics.Metrics;
+using mission04;
+
+
+BoardFunctions bf = new BoardFunctions();
+
 
 string[,] boardArray = { { "1", "2", "3" }, { "4", "5", "6" }, { "7", "8", "9" } };
 
@@ -46,7 +51,7 @@ bool advance = false;
 do   // VALIDATE INPUT
 {
     //PRINT THE GAME BOARD
-    //PrintBoard(boardArray);
+    bf.PrintBoard(boardArray);
     
 
     Console.WriteLine("Player "+ playerNum + ", please enter a number 1-9 to place your "+ playerSym);
