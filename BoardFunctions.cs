@@ -63,22 +63,24 @@ namespace mission04
             //Check left Diagonal win
             if (winner != true)
             {
-                winValue = boardArray[0,0];
+                checkValue = boardArray[0,0];
 
                 if (boardArray[1,1] == checkValue && boardArray[2,2] == checkValue)
                 {
                     winner = true;
+                    winValue = checkValue;
                 }
             }
 
             //Check right Diagonal win
             if (winner != true)
             {
-                winValue = boardArray[0,2];
+                checkValue = boardArray[0,2];
 
                 if (boardArray[1,1] == checkValue && boardArray[2,0] == checkValue)
                 {
                     winner = true;
+                    winValue = checkValue;
                 }
             }
      
